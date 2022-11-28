@@ -31,59 +31,6 @@
 
 </div>
 
-> 如果您不知道什么是 [OneBot](https://github.com/howmanybots/onebot) 或不希望运行多个程序，还可以直接前往 [gocqzbp](https://github.com/FloatTech/gocqzbp) 的 [Release](https://github.com/FloatTech/gocqzbp/releases) 页面下载单一可执行文件或前往 [Packages](https://github.com/FloatTech/gocqzbp/pkgs/container/gocqzbp) 页面使用`docker`，运行后按提示登录即可。
-
-> 如果您对开发插件感兴趣，欢迎加入[ZeroBot-Plugin-Playground](https://github.com/FloatTech/ZeroBot-Plugin-Playground)
-
-## 命令行参数
-> `[]`代表是可选参数
-```bash
-zerobot [-h] [-n nickname] [-t token] [-u url] [-p prefix] [-d|w] [-c|s config.json] [-l latency] [-r ringlen] [-x max process time] [qq1 qq2 qq3 ...] [&]
-```
-- **-h**: 显示帮助
-- **-n nickname**: 设置默认昵称，默认为`椛椛`
-- **-t token**: 设置`AccessToken`，默认为空
-- **-u url**: 设置`Url`，默认为`ws://127.0.0.1:6700`
-- **-p prefix**: 设置命令前缀，默认为`/`
-- **-d|w**: 开启 debug | warning 级别及以上日志输出
-- **-c config.json**: 从`config.json`加载`bot`配置
-- **-s config.json**: 保存现在`bot`配置到`config.json`
-- **-l latency**: 全局处理延时 (ms)
-- **-r ringlen**: 接收消息环缓冲区大小
-- **-x max process time**: 最大处理时间 (min)
-- **qqs**: superusers 的 qq 号
-- **&**: 驻留在后台，必须放在最后，仅`Linux`下有效
-
-默认配置文件格式如下。当选择从配置文件加载时，将忽略相应命令行参数。
-```json
-{
-    "zero": {
-        "nickname": [
-            "椛椛",
-            "ATRI",
-            "atri",
-            "亚托莉",
-            "アトリ"
-        ],
-        "command_prefix": "/",
-        "super_users": [],
-        "ring_len": 4096,
-        "latency": 233000000,
-        "max_process_time": 240000000000
-    },
-    "ws": [
-        {
-            "Url": "ws://127.0.0.1:6700",
-            "AccessToken": ""
-        }
-    ]
-}
-```
-
-## 功能
-> 在编译时，以下功能除插件控制外，均可通过注释`main.go`中的相应`import`而物理禁用，减小插件体积。
-> 通过插件控制，还可动态管理某个功能在某个群的打开/关闭。
-> 插件的优先级为`import`的先后顺序
 
 <details>
   <summary>插件控制</summary>
